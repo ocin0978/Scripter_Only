@@ -4,7 +4,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Access Gra
 task.wait(3.5)
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local Window = WindUI:CreateWindow({
-    Title = "Ocin Hub ",
+    Title = "Ocin Hub",
     Icon = "monitor",
     Author = "Access Granted!",
     Folder = "Ocin Hub Files",
