@@ -2,4 +2,18 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Loading...
 task.wait(3.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Access Granted!")
 task.wait(3.5)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Opening Hub...")
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local Window = WindUI:CreateWindow({
+    Title = "Ocin Hub ",
+    Icon = "monitor",
+    Author = "Access Granted!",
+    Folder = "Ocin Hub Files",
+    Size = UDim2.new(0.8, 0, 0.6, 0),
+    Transparent = true,
+    Theme = "Dark",
+    Resizable = true,
+    SideBarWidth = 200,
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = true,
+})
