@@ -17,3 +17,13 @@ local Window = WindUI:CreateWindow({
     HideSearchBar = true,
     ScrollBarEnabled = true,
 })
+local Tab = Window:Tab({
+    Title = "Library Hub",
+    Icon = "github",
+    Locked = false,
+})
+local Tab = Window:Tab({
+    Title = "Scripts",
+    Icon = "scroll",
+    Locked = false,
+})
