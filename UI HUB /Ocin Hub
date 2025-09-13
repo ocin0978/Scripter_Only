@@ -35,3 +35,11 @@ local Tab = Window:Tab({
     Icon = "scroll",
     Locked = false,
 })
+local Button = Tab:Button({
+    Title = "Infinite Yield",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end
+})
