@@ -22,6 +22,14 @@ local Tab = Window:Tab({
     Icon = "github",
     Locked = false,
 })
+local Button = Tab:Button({
+    Title = "Tiger X V4",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BalintTheDevXBack/Universal/refs/heads/main/TigerXHubV4"))()
+    end
+})
 local Tab = Window:Tab({
     Title = "Scripts",
     Icon = "scroll",
