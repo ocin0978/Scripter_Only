@@ -48,3 +48,8 @@ local Tab = Window:Tab({
     Icon = "gamepad-2",
     Locked = false,
 })
+local Section = Window:Section({
+    Title = "steal a brainrot",
+    Icon = "nil",
+    Opened = true,
+})
