@@ -9,8 +9,6 @@ local Window = WindUI:CreateWindow({
     Author = "Access Granted!",
     Folder = "Ocin Hub Files",
     Size = UDim2.new(0.9, 0, 0.7, 0),
-    AnchorPoint = Vector2.new(0.5, 0.5),
-    Position = UDim2.new(0.5, 0, 0.5, 0),
     Transparent = true,
     Theme = "Dark",
     Resizable = false,
@@ -19,6 +17,9 @@ local Window = WindUI:CreateWindow({
     HideSearchBar = true,
     ScrollBarEnabled = true,
 })
+
+Window.AnchorPoint = Vector2.new(0.5, 0.5)
+Window.Position = UDim2.new(0.5, 0, 0.5, 0)
 local Tab = Window:Tab({
     Title = "Library Hub",
     Icon = "github",
