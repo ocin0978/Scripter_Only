@@ -1,4 +1,4 @@
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Loading...")
+bbgame:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Loading...")
 task.wait(3.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Access Granted!")
 task.wait(1.5)
@@ -52,4 +52,12 @@ local Section = Window:Section({
     Title = "steal a brainrot",
     Icon = "nil",
     Opened = true,
+})
+local Button = Tab:Button({
+    Title = "Chilli Hub",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
+    end
 })
