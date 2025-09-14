@@ -43,3 +43,8 @@ local Button = Tab:Button({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
     end
 })
+local Tab = Window:Tab({
+    Title = "Games",
+    Icon = "gamepad-2",
+    Locked = false,
+})
