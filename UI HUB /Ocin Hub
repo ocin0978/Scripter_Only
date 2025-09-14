@@ -1,4 +1,4 @@
-bbgame:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Loading...")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Loading...")
 task.wait(3.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Access Granted!")
 task.wait(1.5)
