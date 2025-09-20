@@ -1,63 +1,89 @@
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Loading...")
-task.wait(3.5)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Access Granted!")
-task.wait(1.5)
-local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
-local Window = WindUI:CreateWindow({
-    Title = "Ocin Hub",
-    Icon = "monitor",
-    Author = "Access Granted!",
-    Folder = "Ocin Hub Files",
-    Size = UDim2.fromOffset(360, 280),
-    Transparent = true,
-    Theme = "Dark",
-    Resizable = true,
-    SideBarWidth = 200,
-    BackgroundImageTransparency = 0.42,
-    HideSearchBar = true,
-    ScrollBarEnabled = false,
+local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
+
+local Window = Luna:CreateWindow({
+	Name = "Nico Scripts",
+	Subtitle = nil,
+	LogoID = "82795327169782",
+	LoadingEnabled = true,
+	LoadingTitle = "Nico Scripts Interface",
+	LoadingSubtitle = "By Nico Scripts",
+
+	ConfigSettings = {
+		RootFolder = nil,
+		ConfigFolder = "Nico Scripts"
+	},
 })
-local Tab = Window:Tab({
-    Title = "Library Hub",
-    Icon = "github",
-    Locked = false,
+
+local Tab = Window:CreateTab({
+	Name = "Admin Commands",
+	Icon = "tab",
+	ImageSource = "Material",
+	ShowTitle = true
 })
-local Button = Tab:Button({
-    Title = "Tiger X V4",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/BalintTheDevXBack/Universal/refs/heads/main/TigerXHubV4"))()
-    end
+
+local Button = Tab:CreateButton({
+	Name = "Infinite Yield",
+	Description = nil,
+    	Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    	end
 })
-local Tab = Window:Tab({
-    Title = "Scripts",
-    Icon = "scroll",
-    Locked = false,
+
+local Tab = Window:CreateTab({
+	Name = "Games",
+	Icon = "tab",
+	ImageSource = "Material",
+	ShowTitle = true
 })
-local Button = Tab:Button({
-    Title = "Infinite Yield",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-    end
-})
-local Tab = Window:Tab({
-    Title = "Games",
-    Icon = "gamepad-2",
-    Locked = false,
-})
-local Section = Window:Section({
-    Title = "steal a brainrot",
-    Icon = "nil",
-    Opened = true,
-})
-local Button = Tab:Button({
-    Title = "Makal Hub",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DoliScriptz/MakalHub/refs/heads/main/loader.lua"))()
-    end
-})
+
+Tab:CreateSection("Steal A Brainrot")
+
+local Toggle = Tab:CreateToggle({
+	Name = "Godmode",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		_G.Godmode = Value
+    if not _G.GodmodeLoop then
+	_G.GodmodeLoop = true
+	task.spawn(function()
+		while true do
+			if _G.Godmode then
+				local player = game.Players.LocalPlayer
+				local character = player.Character
+				if character and character:FindFirstChildOfClass("Humanoid") then
+					local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+					humanoid.Health = humanoid.MaxHealth
+
+					if humanoid.Health <= 0 then
+						humanoid.Health = humanoid.MaxHealth
+						humanoid:ChangeState(Enum.HumanoidStateType.Physics)
+					end
+				end
+			end
+			task.wait(0)
+		end
+	end)
+end
+	end
+}, "Toggle")
+
+local Toggle = Tab:CreateToggle({
+	Name = "Infinitejump",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		_G.InfiniteJump = Value
+    if not _G.InfiniteJumpConnection then
+	_G.InfiniteJumpConnection = game:GetService("UserInputService").JumpRequest:Connect(function()
+		if _G.InfiniteJump then
+			local player = game.Players.LocalPlayer
+			if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+				player.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
+			end
+		end
+	end)
+end
+	end
+}, "Toggle")
