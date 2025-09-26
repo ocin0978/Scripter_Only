@@ -110,6 +110,11 @@ local function addESP(plr)
     label.TextScaled = true
     label.Parent = bb
     billboards[plr] = bb
+
+    plr.CharacterAdded:Connect(function(newChar)
+        local newHead = newChar:WaitForChild("Head")
+        bb.Adornee = newHead
+    end)
 end
 
 game.Players.PlayerRemoving:Connect(function(plr)
